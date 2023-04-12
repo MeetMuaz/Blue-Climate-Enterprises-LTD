@@ -1,106 +1,62 @@
 import type { NextPage } from "next";
 import Navbar from "../components/Navbar";
-import Toogle from "../components/Toogle";
-import Header from "../components/Header";
-import ServiceBox from "../components/ServiceBox";
+import divs from "../components/divs";
 import BlogBox from "../components/BlogBox";
-import Cto from '../components/Cto';
 import Footer from '../components/Footer';
+import React, { useState } from "react";
+
+
 
 const Home: NextPage = () => {
+
+  const [ filter, setFilter ] = useState<string>("a");
+
+  const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFilter(event.target.value);
+  }
+
+  const filteredDivs = divs.filter((div) =>
+    div.props.className.includes(filter)
+  );
+
+  const handleButtonClick = (filter : string) => {
+    setFilter(filter)
+  };
+ 
   return ( 
     <>
         <Navbar />
-        <Toogle />
-        
 
-
-          <div className="">
-            <Header 
-              header="Explore Beatiful World!"
-              paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, non? bala bu bula ba"
-              imageUrl="/travel.jpg"
-              linkTo="/contact"
-              linkText="Contact Us Today" 
-            />
-            <div className="py-10 px-5 max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                <ServiceBox 
-                  header="Hotel Reservation"
-                  paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, non? bala bu bula ba"
-                />  
-                <ServiceBox 
-                  header="Flight Booking"
-                  paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, non? bala bu bula ba"
-                /> 
-                <ServiceBox 
-                  header="Travelling Itinarary"
-                  paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, non? bala bu bula ba"
-                /> 
-                <ServiceBox 
-                  header="Hotel Reservation"
-                  paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, non? bala bu bula ba"
-                />  
-                <ServiceBox 
-                  header="Flight Booking"
-                  paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, non? bala bu bula ba"
-                /> 
-                <ServiceBox 
-                  header="Travelling Itinarary"
-                  paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, non? bala bu bula ba"
-                />     
-              </div>
+        {/* toggle section */}
+        <hr />
+            <div className="px-5 max-w-7xl mx-auto">
+                <div className="flex justify-evenly w-full text-sm font-sans">
+                    <button 
+                      className="hover:text-blue-600 border-b-transparent border-b-2 hover:border-blue-600 py-5 outline-none"
+                      onClick={() => handleButtonClick("a")}
+                    >
+                      Travel and Tour
+                    </button>
+                    <button 
+                      className="hover:text-blue-600 border-b-transparent border-b-2 hover:border-blue-600 py-5 outline-none"
+                      onClick={() => handleButtonClick("b")}
+                    >
+                      Real Estate
+                    </button>
+                </div>
             </div>
+          <hr />
+
+          {/* filter section */}
+          <div className="filter-value">
+            {filteredDivs.map((div) => div)}
           </div>
 
-
-
-          <div className="">
-            <Header 
-              header="Explore Beatiful World!"
-              paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, non? bala bu bula ba"
-              imageUrl="/estate.jpg"
-              linkTo="/contact"
-              linkText="Contact Us Today" 
-            />
-            <div className="py-10 px-5 max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                <ServiceBox 
-                  header="Hotel Reservation"
-                  paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, non? bala bu bula ba"
-                />  
-                <ServiceBox 
-                  header="Flight Booking"
-                  paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, non? bala bu bula ba"
-                /> 
-                <ServiceBox 
-                  header="Travelling Itinarary"
-                  paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, non? bala bu bula ba"
-                /> 
-                <ServiceBox 
-                  header="Hotel Reservation"
-                  paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, non? bala bu bula ba"
-                />  
-                <ServiceBox 
-                  header="Flight Booking"
-                  paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, non? bala bu bula ba"
-                /> 
-                <ServiceBox 
-                  header="Travelling Itinarary"
-                  paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, non? bala bu bula ba"
-                />     
-              </div>
-            </div>
-          </div>
-
-
-
-
-          <Cto />
+          {/* blog section */}
           <div className="pt-10 pb-16 px-5 max-w-7xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 <BlogBox 
-                  title="Why is Tesla Cybertruck designed the way it is"
+                  title="The feature of Real estate and Travel in Nigeria"
                   paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quibusdam..."
                   imageUrl="/travel.jpg"
                   time="2 h ago"
@@ -109,12 +65,12 @@ const Home: NextPage = () => {
                   linkTo="/"
                 />
                 <BlogBox 
-                  title="Why is Tesla Cybertruck designed the way it is"
+                  title="Life is like a banana you can fly but car can not run"
                   paragraph="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quibusdam..."
-                  imageUrl="/travel.jpg"
+                  imageUrl="/estate.jpg"
                   time="2 h ago"
                   author="Cardi Mikel"
-                  authorUrl="/vision.jpg"
+                  authorUrl="/estate.jpg"
                   linkTo="/"
                 />
                 <BlogBox 
@@ -135,3 +91,9 @@ const Home: NextPage = () => {
 };
 
 export default Home
+
+       
+
+
+
+            

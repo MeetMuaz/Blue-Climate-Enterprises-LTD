@@ -7,9 +7,9 @@ const Contact: NextPage = () => {
     <>
     <Navbar />
     {/* map and form section */}
-        <div className="pt-10 pb-14 max-w-7xl mx-auto">
-            <h3 className="text-4xl text-gray-600 font-semibold pb-6 max-w-lg">
-                Love to hear from you, get in touch 👋
+        <div className="px-5 pt-10 pb-14 max-w-7xl mx-auto">
+            <h3 className="text-3xl text-gray-600 font-semibold pb-6 max-w-lg">
+                Love to hear from you, get in touch today👋
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
@@ -84,8 +84,8 @@ const Contact: NextPage = () => {
                 {/* map section */}
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.154669188886!2d3.349812114094018!3d6.502095725217347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c1637a7e8eb%3A0xeff5a24227ce0974!2s21%20Oyekan%20St%2C%20Surulere%20101241%2C%20Lagos!5e0!3m2!1sen!2sng!4v1680721769507!5m2!1sen!2sng" 
-                    width="600" 
-                    height="450" 
+                    height="380"
+                    width="100%"
                     allowFullScreen={true}
                     loading="lazy" 
                     referrerPolicy="no-referrer-when-downgrade"></iframe>

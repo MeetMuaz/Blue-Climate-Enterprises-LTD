@@ -4,14 +4,15 @@ import Image from "next/image";
 interface Props {
     header: string;
     paragraph: string;
+    color: string;
 }
 
-const ServiceBox: NextPage<Props> = ({ header, paragraph }: Props) => {
+const ServiceBox: NextPage<Props> = ({ header, paragraph, color }: Props) => {
     return(
         <>
-        <div className="p-5 rounded-lg border border-solid shadow-sm">
-            <h3 className="text-gray-500 text-2xl pb-4">{header}</h3>
-            <p className="text-gray-400">{paragraph}</p>
+        <div className={`border border-solid shadow-sm font-sans py-8 px-4 ${color}`}>
+            <h3 className="text-white font-semibold text-xl font-meduim mb-4">{header}</h3>
+            <p className="text-gray-100">{paragraph}</p>
         </div> 
         </>
     );
