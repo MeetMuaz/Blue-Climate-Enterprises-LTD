@@ -12,12 +12,12 @@ const Navbar: NextPage = () => {
   return (
     <>
     {/* desktop nav section */}
-    <div className="p-4">
+    <div className="px-4 py-6">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
 
         {/* website logo */}
         <Link href={"/"}>
-          <img src="logo.svg" alt="" />
+          <img src="/logo.svg" alt="" />
         </Link>
 
           {/* website links */}
@@ -80,7 +80,7 @@ const Navbar: NextPage = () => {
         className="flex w-full items-center p-4 border-b"
         onClick={handleMobileToggle}
       >
-        <img src="logo.svg" alt="" />
+        <img src="/logo.svg" alt="" />
       </Link>
 
             {/* website link */}
