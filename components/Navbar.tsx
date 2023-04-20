@@ -1,88 +1,68 @@
 import type { NextPage } from "next";
-import Link from 'next/link';
+import Link from "next/link";
 import { useState } from "react";
 
-
 const Navbar: NextPage = () => {
-
-  const [ mobileToggle, setMobileToggle ] = useState<boolean>(true);
+  const [mobileToggle, setMobileToggle] = useState<boolean>(true);
 
   function handleMobileToggle() {
-    setMobileToggle(!mobileToggle)
+    setMobileToggle(!mobileToggle);
   }
 
-  return ( 
+  return (
     <>
     {/* desktop nav section */}
-    <div className="px-4 py-6">
+    <div className="p-4">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
 
         {/* website logo */}
         <Link href={"/"}>
-          <img src="/logo.svg" alt="" />
+          <img src="logo.svg" alt="" />
         </Link>
 
-        {/* website links */}
-        <div className="hidden md:block">
-          <ul className="flex space-x-8 text-sm font-sans">
-          <li>
-          <Link
-            href="/"
-          >
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/about"
-          >
-            About
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/contact"
-          >
-            Contact
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/blog"
-          >
-            Blog
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/contact"
-            className="font-semibold bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded text-white shadow-sm"
-          >
-            Get started
-          </Link>
-        </li>
-          </ul>
-        </div>
+          {/* website links */}
+          <div className="hidden md:block">
+            <ul className="flex space-x-8 text-sm font-sans">
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/about">About</Link>
+              </li>
+              <li>
+                <Link href="/contact">Contact</Link>
+              </li>
+              <li>
+                <Link href="/blog">Blog</Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="font-semibold bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded text-white shadow-sm"
+                >
+                  Get started
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-        {/* open  */}
-        <div className="open block md:hidden">
-          <button 
-            onClick={handleMobileToggle}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className="h-6 w-6 text-gray-600 fill-current"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
-          </button>
+          {/* open  */}
+          <div className="open block md:hidden">
+            <button onClick={handleMobileToggle}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                className="h-6 w-6 text-gray-600 fill-current"
+              >
+                <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+              </svg>
+            </button>
+          </div>
         </div>
-
       </div>
-    </div>
-
-
-
-
 
     {/* mobile nav section */}
-    <div>
-    <div className={`z-30 fixed h-full transform left-0 top-0 overflow-auto ease-in-out transition-all duration-150 bg-white shadow-sm ${ mobileToggle ? 'w-0': 'w-64' }`}>
+    <div className={`z-30 fixed h-full transform left-0 top-0 overflow-auto ease-in-out transition-all duration-150 bg-white ${ mobileToggle ? 'w-0': 'w-64' }`}>
       <div className="p-4">
         {/* close button */}
       <div className="close">
@@ -100,61 +80,61 @@ const Navbar: NextPage = () => {
         className="flex w-full items-center p-4 border-b"
         onClick={handleMobileToggle}
       >
-        <img src="/logo.svg" alt="" />
+        <img src="logo.svg" alt="" />
       </Link>
 
-      {/* website link */}
-      <ul className="divide-y font-sans">
-        <li>
-          <Link
-            href="/"
-            className="my-4 inline-block"
-            onClick={handleMobileToggle}
-          >
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/about"
-            className="my-4 inline-block"
-            onClick={handleMobileToggle}
-          >
-            About
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/contact"
-            className="my-4 inline-block"
-            onClick={handleMobileToggle}
-          >
-            Contact
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/blog"
-            className="my-4 inline-block"
-            onClick={handleMobileToggle}
-          >
-            Blog
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/contact"
-            className="my-8 inline-block w-full text-center font-semibold bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded text-white shadow-sm"
-            onClick={handleMobileToggle}
-          >
-            Get started
-          </Link>
-        </li>
-      </ul>
+            {/* website link */}
+            <ul className="divide-y font-sans">
+              <li>
+                <Link
+                  href="/"
+                  className="my-4 inline-block"
+                  onClick={handleMobileToggle}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="my-4 inline-block"
+                  onClick={handleMobileToggle}
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="my-4 inline-block"
+                  onClick={handleMobileToggle}
+                >
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="my-4 inline-block"
+                  onClick={handleMobileToggle}
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="my-8 inline-block w-full text-center font-semibold bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded text-white shadow-sm"
+                  onClick={handleMobileToggle}
+                >
+                  Get started
+                </Link>
+              </li>
+            </ul>
 
-      {/* social link */}
-      <div className="follow">
-        <p className="italic font-sans text-sm">follow us:</p>
+            {/* social link */}
+            <div className="follow">
+              <p className="italic font-sans text-sm">follow us:</p>
 
         <div className="social flex space-x-5 mt-4">
           <Link href="/">
@@ -173,113 +153,8 @@ const Navbar: NextPage = () => {
       </div>
       </div>
       </div>
-      </div>
     </> 
   )
 };
 
 export default Navbar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
