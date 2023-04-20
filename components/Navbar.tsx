@@ -14,12 +14,12 @@ const Navbar: NextPage = () => {
   return ( 
     <>
     {/* desktop nav section */}
-    <div className="p-4">
+    <div className="px-4 py-6">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
 
         {/* website logo */}
         <Link href={"/"}>
-          <img src="logo.svg" alt="" />
+          <img src="/logo.svg" alt="" />
         </Link>
 
         {/* website links */}
@@ -81,7 +81,8 @@ const Navbar: NextPage = () => {
 
 
     {/* mobile nav section */}
-    <div className={`z-30 fixed h-full transform left-0 top-0 overflow-auto ease-in-out transition-all duration-150 bg-white ${ mobileToggle ? 'w-0': 'w-64' }`}>
+    <div>
+    <div className={`z-30 fixed h-full transform left-0 top-0 overflow-auto ease-in-out transition-all duration-150 bg-white shadow-sm ${ mobileToggle ? 'w-0': 'w-64' }`}>
       <div className="p-4">
         {/* close button */}
       <div className="close">
@@ -99,7 +100,7 @@ const Navbar: NextPage = () => {
         className="flex w-full items-center p-4 border-b"
         onClick={handleMobileToggle}
       >
-        <img src="logo.svg" alt="" />
+        <img src="/logo.svg" alt="" />
       </Link>
 
       {/* website link */}
@@ -169,6 +170,7 @@ const Navbar: NextPage = () => {
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className="h-5 w-5 text-gray-600 fill-current"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
           </Link>
         </div>
+      </div>
       </div>
       </div>
       </div>

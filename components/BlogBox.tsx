@@ -28,10 +28,9 @@ const BlogBox: NextPage<Props> = ({ title, paragraph, author, time, imageUrl, au
             <div className="p-5">
                 <h4 className="text-gray-500 text-lg font-semibold">{title}</h4>
                 <p className="text-gray-400 my-5">{paragraph}</p>
-                <div className="h-10 w-10 rounded-full bg-cover float-left mr-2" style={style}></div>
+                <div className="h-10 w-10 rounded-full bg-cover float-left mb-4 mr-2 " style={style}></div>
                 <div>
                     <p className="text-gray-400">{author}</p>
-                    <small className="text-gray-400">{time}</small>
                 </div>
             </div>
         </div>
