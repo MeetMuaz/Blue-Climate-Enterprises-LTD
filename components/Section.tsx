@@ -11,7 +11,7 @@ const Section: NextPage<Props> = ({title, paragraph, imageUrl }) => {
     return (
         <>
         {/* Individual section */}
-        <div className="mt-20 px-5 max-w-7xl mx-auto font-sans">
+        <div className="mt-20 max-w-7xl mx-auto font-sans">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 ">
                 <Image
                     src={imageUrl}
