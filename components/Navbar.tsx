@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 const Navbar: NextPage = () => {
   const [mobileToggle, setMobileToggle] = useState<boolean>(true);
@@ -17,7 +18,10 @@ const Navbar: NextPage = () => {
 
         {/* website logo */}
         <Link href={"/"}>
-          <img src="/logo.svg" alt="" />
+          <Image 
+          src={"/logo.svg"}
+          alt="logo"
+          />
         </Link>
 
           {/* website links */}
@@ -80,7 +84,10 @@ const Navbar: NextPage = () => {
         className="flex w-full items-center p-4 border-b"
         onClick={handleMobileToggle}
       >
-        <img src="/logo.svg" alt="" />
+        <Image 
+        src={"/logo.svg"}
+        alt="logo"
+        />
       </Link>
 
             {/* website link */}

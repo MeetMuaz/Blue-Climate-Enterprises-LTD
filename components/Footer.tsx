@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Link from 'next/link';
+import Image from "next/image";
 
 const Footer: NextPage = () => {
     return(
@@ -8,7 +9,10 @@ const Footer: NextPage = () => {
                 <Link
                     href="/"
                 >
-                    <img src="logo.svg" alt="" />
+                    <Image 
+                    src={"/logo.svg"}
+                    alt="logo"
+                    />
                 </Link>
             </div>
 
