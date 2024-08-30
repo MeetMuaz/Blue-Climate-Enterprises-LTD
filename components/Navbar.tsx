@@ -13,7 +13,7 @@ const Navbar: NextPage = () => {
   return (
     <>
     {/* desktop nav section */}
-    <div className="px-4 py-6">
+    <div className="px-4 py-4">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
 
         {/* website logo */}
